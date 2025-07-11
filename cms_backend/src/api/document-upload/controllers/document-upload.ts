@@ -135,7 +135,7 @@ export async function processCsvFileFromPath(filePath: string) {
     if (existing) {
       await strapi.entityService.update('api::document-store.document-store', existing.id, {
         data: {
-          ...data,
+          ...(data as any),
           manualOverride: true,
         },
       });
@@ -143,7 +143,7 @@ export async function processCsvFileFromPath(filePath: string) {
     } else {
       await strapi.entityService.create('api::document-store.document-store', {
         data: {
-          ...data,
+          ...(data as any),
           manualOverride: true,
         },
       });
