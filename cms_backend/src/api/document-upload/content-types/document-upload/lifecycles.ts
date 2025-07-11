@@ -21,7 +21,7 @@ export default {
       return;
     }
 
-    const filePath = path.resolve(relativeUrl.replace(/^\/+/, ''));
+    const filePath = file.url//path.resolve(relativeUrl.replace(/^\/+/, ''));
     if (!fs.existsSync(filePath)) {
       strapi.log.error(`File not found: ${filePath}`);
       return;
