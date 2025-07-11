@@ -32,6 +32,7 @@ interface DocumentCsvRow {
   SMEs?: string;
   Competitors?: string;
   Attachments?: string;
+manualOverride?: boolean;
 }
 
 export async function processCsvFileFromPath(filePath: string) {
