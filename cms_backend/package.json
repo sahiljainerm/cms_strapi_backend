@@ -21,6 +21,7 @@
     "@strapi/strapi": "5.18.0",
     "axios": "^1.10.0",
     "better-sqlite3": "11.3.0",
+    "csv-parse": "^6.0.0",
     "csv-parser": "^3.2.0",
     "fs-extra": "^10.0.0",
     "meilisearch": "^0.51.0",
