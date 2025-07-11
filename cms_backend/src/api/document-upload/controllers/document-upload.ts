@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
 import { Context } from 'koa';
-
+import axios from 'axios';
 interface DocumentCsvRow {
   SF_Number?: string;
   Unique_Id?: string;
@@ -35,8 +35,20 @@ interface DocumentCsvRow {
 manualOverride?: boolean;
 }
 
+async function getCsvContent(filePathOrUrl: string): Promise<string> {
+  if (/^https?:\/\//i.test(filePathOrUrl)) {
+    // Remote URL - fetch via HTTP
+    const response = await axios.get(filePathOrUrl, { responseType: 'text' });
+    return response.data;
+  } else {
+    // Local file path
+    return fs.readFileSync(filePathOrUrl, 'utf-8');
+  }
+}
+
 export async function processCsvFileFromPath(filePath: string) {
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  //const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const fileContent = await getCsvContent(filePath);
   const records: DocumentCsvRow[] = parse(fileContent, {
     columns: true,
     skip_empty_lines: true,
