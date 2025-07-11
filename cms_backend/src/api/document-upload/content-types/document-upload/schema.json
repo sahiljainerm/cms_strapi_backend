@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "document_uploads",
+  "info": {
+    "singularName": "document-upload",
+    "pluralName": "document-uploads",
+    "displayName": "Bulk_Document_Upload"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "document_file": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

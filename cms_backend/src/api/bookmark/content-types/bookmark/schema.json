@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookmarks",
+  "info": {
+    "singularName": "bookmark",
+    "pluralName": "bookmarks",
+    "displayName": "Bookmark"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "document_store": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::document-store.document-store",
+      "inversedBy": "bookmarks"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "downloads",
+  "info": {
+    "singularName": "download",
+    "pluralName": "downloads",
+    "displayName": "Download"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "downloaded_at": {
+      "type": "date"
+    },
+    "document_store": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::document-store.document-store",
+      "inversedBy": "downloads"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_ratings",
+  "info": {
+    "singularName": "user-rating",
+    "pluralName": "user-ratings",
+    "displayName": "User_Rating"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "comment_text": {
+      "type": "string"
+    },
+    "document_store": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::document-store.document-store",
+      "inversedBy": "user_ratings"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "document_views",
+  "info": {
+    "singularName": "document-view",
+    "pluralName": "document-views",
+    "displayName": "Document_View"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "viewed_at": {
+      "type": "date"
+    },
+    "document_store": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::document-store.document-store",
+      "inversedBy": "document_views"
+    }
+  }
+}
